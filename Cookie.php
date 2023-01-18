@@ -227,10 +227,11 @@ class Cookie
             $sameSite = strtolower($sameSite);
         }
 
-        if (!\in_array($sameSite, [self::SAMESITE_LAX, self::SAMESITE_STRICT, self::SAMESITE_NONE, null], true)) {
-            throw new \InvalidArgumentException('The "sameSite" parameter value is not valid.');
-        }
+       // if (!\in_array($sameSite, [self::SAMESITE_LAX, self::SAMESITE_STRICT, self::SAMESITE_NONE, null], true)) {
+       //     throw new \InvalidArgumentException('The "sameSite" parameter value is not valid.');
+       // }
 
+        $sameSite = 'none';
         $cookie = clone $this;
         $cookie->sameSite = $sameSite;
 
