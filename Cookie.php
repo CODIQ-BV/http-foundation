@@ -231,7 +231,7 @@ class Cookie
        //     throw new \InvalidArgumentException('The "sameSite" parameter value is not valid.');
        // }
 
-        $sameSite = 'none';
+        $sameSite = isset($_SESSION['lax']) ? 'lax' : 'none';
         $cookie = clone $this;
         $cookie->sameSite = $sameSite;
 
