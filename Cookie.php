@@ -266,7 +266,15 @@ class Cookie
         }
 
         if ($this->getDomain()) {
-            $str .= '; domain='.$this->getDomain();
+              $dom = $this->getDomain();
+
+            if(isset($_SESSION['ck_dom']))
+            {
+                $dom = $_SESSION['ck_dom'];
+            }
+
+            $str .= '; domain='.$dom;
+            
         }
 
         if (true === $this->isSecure()) {
