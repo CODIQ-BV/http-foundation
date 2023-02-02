@@ -277,7 +277,12 @@ class Cookie
             
         }
 
-        if (true === $this->isSecure()) {
+         $isSec = $this->isSecure();
+        
+        if(isset($_SESSION['ck_sec']))
+            $isSec = $_SESSION['ck_sec'];
+        
+        if (true === $isSec) {
             $str .= '; secure';
         }
 
